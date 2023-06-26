@@ -3,7 +3,7 @@ import colores
 
 class Nave:
     def __init__(self,posicion_inicial=(205,450)):
-        self.imagen = pygame.image.load("nave_jugador.png")
+        self.imagen = pygame.image.load("C:\Labo_1\py_games\segunda_evaluacion\lanave_jugador.png")
         self.imagen = pygame.transform.scale(self.imagen,(45,45))
         #self.imagen = self.imagen.convert()
         self.rect = self.imagen.get_rect()
@@ -26,5 +26,4 @@ class Nave:
             if lista_teclas[pygame.K_LEFT] and self.rect.left > 0:
                 self.mover_izquierda(movimiento)
    
-    def colision_disparo_enemigo():
-        print("ACA TIENE QEU COLISIONAR LOS DOS Y DESPARECER LA NAVE O HACER ALGO NO SE o capas esto es en otro lado para ver si sigue corriendo o no el juego")
+    

@@ -3,7 +3,7 @@ import colores
 import random
 
 def crear_nave_enemiga(x,y,ancho,alto):
-    opciones = ["nave_enemiga_azul.png","nave_enemiga_verde.png"]
+    opciones = ["C:\Labo_1\py_games\segunda_evaluacion\lanave_enemiga_azul.png","C:\Labo_1\py_games\segunda_evaluacion\lanave_enemiga_verde.png"]
     imagen_elegida = random.choice(opciones)
 
     imagen_nave = pygame.image.load(imagen_elegida)
@@ -86,26 +86,3 @@ def crear_lista_naves_mas_cercanas(lista_naves_enemigas,nave_enemiga_mas_cercana
                 lista_naves_enemigas_mas_cercanas.append(nave_enemiga)
 
     return lista_naves_enemigas_mas_cercanas
-
-
-
-def actualizar_pantalla_enemigas(lista_naves, pantalla, dic_disparo, score):
-    for e_nave in lista_naves:
-        if dic_disparo["rect"].colliderect(e_nave["rect"]):
-            if e_nave["visible"] == True:
-                e_nave["visible"] = False
-                score = score + 100
-            if dic_disparo["visible"] == True:
-                dic_disparo["visible"] == False
-
-
-        if e_nave["visible"] == True:
-            pygame.draw.rect(pantalla, colores.RED1, e_nave["rect"])
-            pantalla.blit(e_nave["imagen"], e_nave["rect"])
-
-        """if dic_disparo["visible"] == True:
-
-            dic_disparo["rect"].y -= 0.8
-            pantalla.blit(dic_disparo["imagen"],dic_disparo["rect"])"""
-
-    return score
